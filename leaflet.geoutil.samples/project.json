@@ -43,6 +43,7 @@
   },
 
   "scripts": {
-    "postpublish": [ "dotnet publish-iis --publish-folder %publish:OutputPath% --framework %publish:FullTargetFramework%" ]
+    "postpublish": [ "dotnet publish-iis --publish-folder %publish:OutputPath% --framework %publish:FullTargetFramework%" ],
+    "postcompile": [ "xcopy %project:Directory%/wwwroot/js/leaflet.geoutil.js %project:Directory%/../leaflet.geoutil.js /Y /R /S /E" ]
   }
 }
